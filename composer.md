@@ -6,7 +6,7 @@
 sudo apt update && sudo apt install curl php-cli php-mbstring git unzip -y
 ```
 
-### Скачаиваем инсталятор хэш-суммy sha384sum
+### Скачиваем инсталлятор и хэш-суммy sha384sum
 
 ```bash
 wget --https-only --output-document=composer-setup.php https://getcomposer.org/installer
