@@ -1345,6 +1345,10 @@ virt-manager
 
 ![](https://sun9-24.userapi.com/c855520/v855520802/1ee4fc/J5SxyiEEcQA.jpg)
 
+*А также обязательно выставляем видеодрайвер Virtio чтобы не было проблем с 3D графикой*
+
+![](https://sun9-43.userapi.com/c857224/v857224955/d6b8d/PgFxGoGVPVY.jpg)
+
 ### В гостевой системе создаём папку и монтируем её
 
 ```bash
