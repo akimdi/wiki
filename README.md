@@ -2,21 +2,21 @@
 
 ### Готовим локальную среду разработки
 
-[Установка ArchLinux](https://github.com/akimdi/wiki/blob/master/archlinux.md)
+[Установка ArchLinux](https://github.com/akimdi/wiki/blob/master/docs/archlinux.md)
 
-[Установка PHP](https://github.com/akimdi/wiki/blob/master/php.md)
+[Установка PHP](https://github.com/akimdi/wiki/blob/master/docs/php.md)
 
-[Установка Composer](https://github.com/akimdi/wiki/blob/master/composer.md)
+[Установка Composer](https://github.com/akimdi/wiki/blob/master/docs/composer.md)
 
-[Установка NGINX](https://github.com/akimdi/wiki/blob/master/nginx.md)
+[Установка NGINX](https://github.com/akimdi/wiki/blob/master/docs/nginx.md)
 
-[Установка MySQL](https://github.com/akimdi/wiki/blob/master/mysql.md)
+[Установка MariaDB](https://github.com/akimdi/wiki/blob/master/docs/mariadb.md)
 
 ---
 
 ### Прохождение курса [Laravel From Scratch](https://laracasts.com/series/laravel-6-from-scratch)
 
-[Запуск приложения на Laravel](https://github.com/akimdi/wiki/blob/master/laravel.md)
+[Запуск приложения на Laravel](https://github.com/akimdi/wiki/blob/master/docs/laravel.md)
 
 [Роутинг]()
 
