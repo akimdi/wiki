@@ -9,17 +9,17 @@ sudo apt update && sudo apt install curl php-cli php-mbstring git unzip -y
 ### Скачиваем инсталлятор и хэш-суммy sha384sum
 
 ```bash
-wget --https-only --output-document=composer-setup.php https://getcomposer.org/installer
+wget --https-only --output-document=/home/me/ram/composer-setup.php https://getcomposer.org/installer
 ```
 
 ```bash
-wget --https-only --output-document=composer-setup.sha384sum https://composer.github.io/installer.sha384sum
+wget --https-only --output-document=/home/me/ram/composer-setup.sha384sum https://composer.github.io/installer.sha384sum
 ```
 
 ### Проверяем хэш-суммy
 
 ```bash
-sha384sum --ignore-missing -c composer-setup.sha384sum
+cd /home/me/ram && sha384sum --ignore-missing -c composer-setup.sha384sum
 ```
 
 *Или же можно воспользоваться скриптом который предлагает composer и произвести установку в [автоматическом режиме](https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md)*
@@ -40,7 +40,7 @@ composer --version
 ### Удаляем установочные файлы
 
 ```bash
-rm -r -f -v composer-setup.php composer-setup.sha384sum
+sudo rm -r -f -v /home/me/ram/composer-setup.php /home/me/ram/composer-setup.sha384sum
 ```
 
 ### Для примера можно [поставить laravel](https://laravel.com/docs/6.x#installing-laravel)
