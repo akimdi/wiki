@@ -15,11 +15,11 @@ sudo apt install mariadb-server mariadb-plugin-connect mariadb-common mariadb-cl
 
 *Удаляем тестовую базу, устанавливаем пароль от root в MariaDB (не путать с пользователем root в системе).*
 
-*Отвечаем на вопросы как показано ниже:*
-
 ```bash
 sudo mysql_secure_installation
 ```
+
+### Отвечаем на вопросы как показано ниже
 
 ```bash
 NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
@@ -189,6 +189,6 @@ quit
 
 *Подробнее можно прочитать на [digitalocean tutorials](https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-debian-10)*
 
-*[MyCLI is a command line interface for MySQL, MariaDB, and Percona with auto-completion and syntax highlighting.](https://www.mycli.net/)*
+*[MyCLI is a command line interface for MySQL, MariaDB, and Percona with auto-completion and syntax highlighting.](https://www.mycli.net)*
 
 *[mycli github](https://github.com/dbcli/mycli)*
