@@ -6,7 +6,7 @@
 sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove
 ```
 
-### Отключаем Apache Server что бы не мешал
+### Отключаем Apache Server чтобы не мешал
 
 ```bash
 sudo systemctl disable --now apache2

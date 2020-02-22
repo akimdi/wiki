@@ -50,7 +50,7 @@ composer global require laravel/installer
 ```
 
 
-### Также следует не забывать добавить переменную PATH в .bashrc или .zshrc (в зависимости от того какой стоит shell)
+### Также следует не забывать добавить переменную PATH в `.bashrc` или `.zshrc` (в зависимости от того какой shell стоит)
 
 ```bash
 vim .bashrc

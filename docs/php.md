@@ -46,7 +46,7 @@ sudo apt install php7.4 -y
 
 ### Устанавливаем дополнительные пакеты которые нужны для работы
 
-*Аналогично можно устанавливать любые другие пакеты которые понадобятся, типо sudo apt install php7.4-xxx. Вместо xxx добавлять те которые нужны.*
+*Аналогично можно устанавливать любые другие пакеты которые понадобятся, типо sudo apt install php7.4-xxx. Вместо `xxx` добавлять те которые нужны.*
 
 ```bash
 sudo apt install php7.4-bcmath php7.4-bz2 php7.4-intl php7.4-gd php7.4-mbstring php7.4-mysql php7.4-zip php7.4-fpm php7.4-xsl -y
