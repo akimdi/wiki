@@ -1420,10 +1420,6 @@ sudo usermod -a -G kvm me
 ```
 
 ```bash
-sudo setfacl -R -m u:libvirt-qemu:rwx /home/me/projects
-```
-
-```bash
 sudo chown -R me:users /home/me/projects
 ```
 
