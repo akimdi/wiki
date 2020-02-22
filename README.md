@@ -18,7 +18,7 @@
 
 [Запуск приложения на Laravel](https://github.com/akimdi/wiki/blob/master/docs/laravel.md)
 
-[Роутинг]()
+[Routing](Routing)
 
 ---
 
