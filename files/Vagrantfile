@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   config.disksize.size = "512GB"
   config.notify.enable = true
   config.vm.define "testing"
-  config.vm.provision "shell", path: "https://raw.githubusercontent.com/akimdi/wiki/master/vagrant-php.sh"
+  config.vm.provision "shell", path: "https://raw.githubusercontent.com/akimdi/wiki/master/files/vagrant-arch-php.sh"
 
   # Run Ansible from the Vagrant Host
   #
