@@ -1,4 +1,4 @@
-### Настраиваем [Vagrant](https://www.vagrantup.com) и [Homestead](https://github.com/laravel/settler)
+### Настраиваем [Vagrant](https://app.vagrantup.com/laravel/boxes/homestead) и [Homestead](https://github.com/laravel/settler)
 
 ```bash
 vagrant plugin install vagrant-disksize vagrant-libvirt vagrant-digitalocean vagrant-netinfo vagrant-address vagrant-notify
