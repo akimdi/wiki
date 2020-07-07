@@ -378,6 +378,17 @@ pacman -S grub efibootmgr os-prober
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 ```
 
+### Меняем ```GRUB_TIMEOUT``` если не хотите чтобы Arch грузился автоматически через [5 секунд ожидания на экране Grub](https://gist.github.com/tz4678/bd33f94ab96c96bc6719035fcac2b807#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-grub)
+
+
+```bash
+sudo nano /etc/default/grub
+```
+
+```bash
+GRUB_TIMEOUT=-1
+```
+
 ```bash
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -392,7 +403,7 @@ exit
 sudo shutdown -r 0
 ```
 
-*После перезагрузки входим из под пользователя **root** с паролем*
+*После перезагрузки входим из под пользователя **root***
 
 ### Проверяем работает ли DHCP сервер
 
@@ -675,7 +686,7 @@ sudo rm -v /home/me/ram/pkglist.txt
 ### Или можно установить эти пакеты из командной строки
 
 ```bash
-sudo pacman -S --needed --noconfirm inetutils sudo base base-devel linux-lts linux-lts-headers netctl coreutils binutils dhcp dhclient dhcping fd mlocate dwdiff wdiff the_silver_searcher ripgrep ack percol tar less most mc findutils diffutils grep sed gawk util-linux procps-ng psmisc cmake make shadow gcc lld lldb openjdk-src openjdk-doc jre-openjdk jdk-openjdk icedtea-web icedtea-web-doc vim-plugins jdk11-openjdk openjdk11-doc openjdk11-src visualvm doxygen doxygen-docs fastjar perl-file-mimeinfo freemind swt mill kitty alacritty rxvt-unicode xterm abduco dvtm screen tmux trash-cli nnn fff ranger vifm nautilus nemo thunar rclone p7zip zip rsync grsync file-roller colordiff diffuse kdiff3 kompare meld gprename krename perl-rename gnome-search-tool kfind mate-utils regexxer exa lsd tree bat termdown bmon figlet slop goaccess moreutils smartmontools cpio libarchive nawk htop recoll git gnome-builder kdevelop lazarus lazarus-qt5 fpc fpc-src netbeans unzip massif-visualizer nemiver scanmem gameconqueror sysprof flex byacc bison peg ragel kde-dev-utils phonon-qt5-gstreamer phonon-qt5 pulseaudio glade fltk ghex okteta jshon jq yq umbrello devhelp kcharselect gucharmap gnome-characters parted gnome-disk-utility gparted partitionmanager btrfs-progs arch-install-scripts dosfstools exfat-utils f2fs-tools xdg-desktop-portal-gtk e2fsprogs jfsutils nilfs-utils ntfs-3g udftools reiserfsprogs xfsprogs ecryptfs-utils unionfs-fuse clonezilla fsarchiver partclone partimage udevil udiskie udisks2 kdf filelight baobab ncdu gdmap testdisk foremost extundelete ext4magic gsmartcontrol libatasmart sweeper rmlint-shredder rmlint fdupes bleachbit gnome-multi-writer gnome-system-monitor xfce4-taskmanager mate-system-monitor lxtask ksysguard gnome-usage psensor xsensors conky conky-manager usbview kinfocenter lshw hardinfo nmon screenfetch neofetch hwinfo hwdetect dmidecode archey3 pacmanlogviewer ksystemlog gnome-system-log gnome-logs xorg-xman khelpcenter yelp gwaterfall gnome-remote-desktop gnome-font-viewer kcron cronie ktimer kshutdown chrony light gnome-color-manager displaycal argyllcms redshift sxhkd xsel cups-pdf cups bluez-cups system-config-printer print-manager xdg-utils blueman blueberry bluedevil gnome-bluetooth bluez-utils acpid acpi powertop bashtop tlp tlp-rdw lostfiles firefox firefox-developer-edition chromium opera upower wire-desktop wireless_tools wireshark-cli wireshark-qt kismet wifite wpa_supplicant cowpatty abook pacmatic pkgfile aria2 uget curl wget reflector pcurses ca-certificates ca-certificates-mozilla tor stow openssl xclip xorg-xclipboard pluma iotop net-tools rofi vim kbd terminus-font adobe-source-code-pro-fonts awesome-terminal-fonts ttf-dejavu ttf-liberation dosbox metasploit telegram-desktop libreoffice-fresh libreoffice-fresh-ru libreoffice-extension-texmaths libreoffice-extension-writer2latex lyx mythes kleopatra ncrack gimp gimp-help-ru potrace pdfmixtool ffmpeg ffmpeg2theora opera-ffmpeg-codecs ffmpegthumbs ffmpegthumbnailer gnome-video-effects pdfmod mupdf mupdf-tools paperwork pdf2djvu pdf2svg pdfcrack pdfsam pdftricks qpdf qpdfview wkhtmltopdf xpdf diffpdf zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps epdfview evince gscan2pdf gv img2pdf mpv cgit git-annex git-crypt gitg git-latexdiff gitolite gitprompt-rs git-repair tig qgit krita pulseeffects chezmoi kate ark adwaita-icon-theme git-annex fakeroot qmmp okular links youtube-dl imagemagick aws-cli pandoc pandoc-citeproc cgrep mkvtoolnix-gui mkvtoolnix-cli rust rust-docs rust-bindgen rust-racer gedit gedit-plugins autossh openssh zsh zsh-doc zsh-lovers libvirt-glib libvirt-python perl-sys-virt dkms polkit virt-manager virt-install qemu qemu-arch-extra qemu-block-gluster qemu-block-iscsi qemu-block-rbd qemu-guest-agent unicorn android-tools android-file-transfer android-udev ttf-droid speedtest-cli cmatrix openshot sox mps-youtube zim optipng hicolor-icon-theme arc-icon-theme audacious audacious-plugins flac i7z gnome-icon-theme gnome-icon-theme-extras gnome-icon-theme-symbolic ttf-fira-sans ttf-fira-mono ttf-ionicons ttf-font-awesome perl-json-xs pass pass-otp rofi-pass pwgen qtpass xournalpp crash pgpdump tcpdump tcptrace xfsdump xorg-xpr scrot networkmanager openvpn pptpclient wireguard-tools shadowsocks shadowsocks-qt5 stunnel elinks lynx w3m falkon qutebrowser min vimb midori axel you-get youtube-viewer mps-youtube nextcloud-client filezilla rtorrent gist pastebinit neomutt mutt fdm procmail offlineimap nftables fractal riot-desktop riot-web wavpack a52dec celt libmad lame obs-studio kdenlive gaupol cmus opus libvorbis opencore-amr speex faac faad2 libfdk-aac jasper openjpeg2 aom dav1d rav1e schroedinger libdv x265 libde265 x264 libmpeg2 libtheora libvpx ogmtools remmina toxcore tuntox toxic qtox eom eog feh geeqie gwenview fbida renameutils nomacs qiv sxiv viewnior vimiv gnome-photos digikam python-cairosvg converseen graphicsmagick gmic guetzli xloadimage jpegoptim optipng fbida fbv darktable flameshot diskus gnome-screenshot maim gpick kcolorchooser gcolor3 gcolor2 sweethome3d fontforge calligra calligra-plan inkscape gnome-calculator speedcrunch dia rawtherapee moc mpg123 xmms2 beets soundconverter audacity gnome-sound-recorder sweep kwave alsa-utils qastools gnac ecasound picard quodlibet easytag mp3unicode mp3info id3v2 gst-plugins-base-libs minitube smtube transmageddon handbrake handbrake-cli ciano transcode mencoder avidemux-cli avidemux-qt subtitleeditor gaupol gnome-subtitles aegisub subdownloader subdl shotcut pitivi blender simplescreenrecorder recordmydesktop peek xdiskusage byzanz zart v4l-utils motion kamoso cheese perl-image-exiftool exiv2 jhead mediainfo mediainfo-gui libsndfile android-file-transfer gnokii gnome-phone-manager kdeconnect gammu wammu pacgraph acetoneiso2 brasero k3b libdvdread libdvdcss libdvdnav gnome-maps gnome-documents gnome-calendar gnome-terminal simple-scan cool-retro-term tilix sparkleshare syncthing syncthing-gtk codeblocks libatasmart glabels scribus abiword vis kakoune kak-lsp xed leafpad beaver nano joe e3 gnumeric libgda kexi txt2tags asciidoc asciidoctor ascii asciinema asciiquarium banner txt2man vbindiff container-diff diff-so-fancy xdelta3 containerd vagrant molecule-vagrant packer libvirt virt-viewer gnome-boxes cpupower minikube kubectl k9s kubectx pinfo texmaker gnome-latex minted gummi qtikz ktikz auto-multiple-choice dblatex dot2tex git-latexdiff hevea kile latex2html latex2rtf otf-latin-modern otf-latinmodern-math python-docutils python-latexcodec rubber sagetex texlive-bin texlive-langchinese texlive-langcyrillic texlive-langextra texlive-langgreek texlive-langjapanese texlive-langkorean texlive-bibtexextra texlive-core texlive-fontsextra texlive-formatsextra texlive-games texlive-humanities texlive-latexextra texlive-music texlive-pictures texlive-pstricks texlive-publishers texlive-science texstudio gnome-chess supertux supertuxkart josm calc khal remind when gnome-clocks armagetronad arc-gtk-theme qmapshack desktop-file-utils gpicview kuickshow gnome-todo noto-fonts-extra hostapd jad jadx groovy ant java11-openjfx java11-openjfx-src java11-openjfx-doc java-avalon-framework java-bcel jruby kotlin gradle jython maven scala xalan-java xerces2-java acme-tiny monit git-lfs git-review lolcat gnome-tweaks datamash clusterssh archlinux-wallpaper wallutils imlib2 strace svt-av1 gc dos2unix pango unrar ack newsboat swig mpop entr gyp sshfs duplicity bash wpscan unoconv ghi libtorrent xz ncurses source-highlight dbeaver dbeaver-plugin-apache-poi dbeaver-plugin-batik dbeaver-plugin-bouncycastle dbeaver-plugin-office dbeaver-plugin-sshj dbeaver-plugin-sshj-lib dbeaver-plugin-svg-format httpie calibre displaycal gnome-control-center vegeta whois lximage-qt parallel shellcheck faba-icon-theme adapta-gtk-theme compsize grub-btrfs snap-pac snapper acl snap-sync syslinux haskell-doctemplates haskell-pandoc-types pandoc-crossref python-pypandoc python-pandocfilters clang llvm openmp compiler-rt badtouch arch-audit hexyl skim sd vivid watchexec smali dgen-sdl gens-gs yabause-qt yelp-tools yasm cuneiform python-pyocr archivetools archlinux-keyring asp which vi autoconf automake groff gzip libtool m4 pacman patch pkgconf systemd texinfo bzip2 cryptsetup popt device-mapper argon2 dhcpcd file filesystem gcc-libs gettext iproute2 iputils licenses linux-firmware logrotate lvm2 man-db man-pages mdadm pciutils perl s-nail sysfsutils systemd-sysvcompat usbutils glibc java-rxtx java-runtime-common retext setconf bbe bluefish canorus dconf-editor ed jedit kid3-qt l3afpad mousepad snd translate-shell hedgewars clipgrab lollypop atomicparsley aspell aspell-ca aspell-cs aspell-de aspell-el aspell-en aspell-es aspell-fr aspell-hu aspell-it aspell-nb aspell-nl aspell-nn aspell-pl aspell-pt aspell-ru aspell-sv aspell-uk linux-tools bpf cgroup_event_listener hyperv libtraceevent perf zzuf radamsa tmon turbostat usbip x86_energy_perf_policy ltris xreader almanah texlive-most texlive-lang drawing ncmpcpp ncmpc linssid tuxcmd diffoscope cantata ario mpc xfmpc htmldoc veracrypt wgetpaste xorg-apps xorg-bdftopcf xorg-iceauth xorg-luit xorg-mkfontscale xorg-sessreg xorg-setxkbmap xorg-smproxy xorg-x11perf xorg-xauth xorg-xbacklight xorg-xcmsdb xorg-xcursorgen xorg-xdpyinfo xorg-xdriinfo xorg-xev xorg-xgamma xorg-xhost xorg-xinput xorg-xkbcomp xorg-xkbevd xorg-xkbutils xorg-xkill xorg-xlsatoms xorg-xlsclients xorg-xmodmap xorg-xpr xorg-xprop xorg-xrandr xorg-xrdb xorg-xrefresh xorg-xset xorg-xsetroot xorg-xvinfo xorg-xwd xorg-xwininfo xorg-xwud xorg-fonts xorg-fonts-encodings xorg-font-util mesa-demos fio hyperfine netperf siege sysbench bonnie++ hdparm iperf iperf3 libdca libmpcdec libwebp qt5-imageformats fdkaac xvidcore xine-lib xine-ui gst-libav intel-ucode iucode-tool pv ddrescue gmock noto-fonts ttf-croscore noto-fonts-cjk earlyoom noto-fonts-emoji ttf-caladea ttf-carlito ttf-opensans ttf-roboto yubioath-desktop kstars moserial rox screengrab utox rawdog zstd gnome-autoar expat zshdb readline paxtest lynis arch-wiki-docs ngrep llpp gst-plugins-bad gst-plugins-good gst-plugins-ugly intel-gmmlib dehydrated hydra exploitdb pixiewps bettercap bettercap-caplets hashcat hashcat-utils cifs-utils iw aircrack-ng fcrackzip john ophcrack pyrit findmyhash cracklib nmap vulscan fping ghostpcl ghostscript ghostxps borgmatic borg hddtemp whowatch mesa intel-media-driver adriconf vulkan-intel vulkan-icd-loader ocl-icd lib32-ocl-icd intel-compute-runtime xf86-input-evdev xf86-input-libinput xf86-input-synaptics xf86-input-void lib32-virtualgl vdpauinfo vim-latexsuite sslstrip sslsplit sslscan sqlmap nikto mitmproxy masscan swaks tcpreplay netbrake hashdeep ifenslave minicom picocom tinyserial lftp evilginx dnscrypt-proxy dns-over-https jnettop arp-scan rink ctags mtr traceroute mkinitcpio linuxconsole bsdiff texworks vapoursynth nemo-seahorse seahorse seahorse-nautilus nvchecker mftrace ttf-cascadia-code ttf-cormorant ttf-fantasque-sans-mono ttf-fira-code ttf-inconsolata ttf-proggy-clean ttf-roboto-mono ttf-ubuntu-font-family progress fvextra iso-codes terraform terraform-provider-keycloak eric syntax-highlighting nano-syntax-highlighting python-qrcode nfs-utils firewalld ebtables dnsmasq tinyemu dosemu multitail bomber asciiportal namcap expac naev astromenace babeltrace dnstracer extremetuxracer grc imwheel xorg-appres xorg-docs xorg-fonts-cyrillic xorg-fonts-misc xorg-fonts-type1 xorg-oclock xorg-server xorg-server-common xorg-server-devel xorg-server-xephyr xorg-server-xnest xorg-server-xvfb xorg-twm xorg-util-macros xorg-xbiff xorg-xcalc xorg-xclock xorg-xconsole xdm-archlinux xorg-xdm autorandr xorg-xedit xorg-xeyes xorg-xfd xorg-xfontsel xorg-xinit xorg-xload xorg-xlogo xorg-xlsfonts xorg-xmag xorg-xmessage xorg-xvidtune i3-gaps py3status i3blocks i3lock-color conky dmenu rofi perl-anyevent-i3 albert rng-tools nyx sigal qbittorrent sssd trojan mailcap zbar detox qrencode qreator sysstat kcptun rsnapshot ext3grep docx2txt lrzip pdftk pdfgrep duperemove snappy lz4 lzip xarchiver lzop atool arj par2cmdline sharutils brotli zlib unarchiver djvulibre tesseract gimagereader-qt gimagereader-common quiterss tesseract-data tesseract-data-tha tesseract-data-tir tesseract-data-tur tesseract-data-uig tesseract-data-ukr tesseract-data-urd tesseract-data-uzb tesseract-data-uzb_cyrl tesseract-data-vie tesseract-data-yid tesseract-data-lat tesseract-data-lav tesseract-data-lit tesseract-data-mal tesseract-data-mar tesseract-data-mkd tesseract-data-mlt tesseract-data-msa tesseract-data-mya tesseract-data-nep tesseract-data-nld tesseract-data-nor tesseract-data-ori tesseract-data-pan tesseract-data-pol tesseract-data-por tesseract-data-pus tesseract-data-ron tesseract-data-rus tesseract-data-san tesseract-data-sin tesseract-data-slk tesseract-data-slk_frak tesseract-data-slv tesseract-data-spa tesseract-data-spa_old tesseract-data-sqi tesseract-data-srp tesseract-data-srp_latn tesseract-data-swa tesseract-data-swe tesseract-data-syr tesseract-data-tam tesseract-data-tel tesseract-data-tgk tesseract-data-tgl tesseract-data-afr tesseract-data-amh tesseract-data-ara tesseract-data-asm tesseract-data-aze tesseract-data-aze_cyrl tesseract-data-bel tesseract-data-ben tesseract-data-bod tesseract-data-bos tesseract-data-bul tesseract-data-cat tesseract-data-ceb tesseract-data-ces tesseract-data-chi_sim tesseract-data-chi_tra tesseract-data-chr tesseract-data-cym tesseract-data-dan tesseract-data-dan_frak tesseract-data-deu tesseract-data-deu_frak tesseract-data-dzo tesseract-data-ell tesseract-data-eng tesseract-data-enm tesseract-data-epo tesseract-data-equ tesseract-data-est tesseract-data-eus tesseract-data-fas tesseract-data-fin tesseract-data-fra tesseract-data-frk tesseract-data-frm tesseract-data-gle tesseract-data-glg tesseract-data-grc tesseract-data-guj tesseract-data-hat tesseract-data-heb tesseract-data-hin tesseract-data-hrv tesseract-data-hun tesseract-data-iku tesseract-data-ind tesseract-data-isl tesseract-data-ita tesseract-data-ita_old tesseract-data-jav tesseract-data-jpn tesseract-data-kan tesseract-data-kat tesseract-data-kat_old tesseract-data-kaz tesseract-data-khm tesseract-data-kir tesseract-data-kor tesseract-data-kur tesseract-data-lao cppcheck check rstcheck rkhunter enchant ipguard libpcap arpwatch bully darkstat dsniff etherape ettercap pth net-snmp iftop hcxtools hping lorcon p0f zmap libsrtp languagetool reprotest disorderfs yapf splint afew alot notmuch notmuch-mutt notmuch-runtime notmuch-vim sylpheed m2r pelican python-pybtex-docutils python-recommonmark python-cloudflare certbot-dns-google certbot-dns-digitalocean certbot-dns-ovh certbot-nginx certbot acme.sh certbot-dns-cloudflare hcloud minio s3cmd s3fs-fuse abcde arduino arduino-avr-core arduino-builder arduino-cli arduino-ctags arduino-docs reaver slowhttptest thc-ipv6 mcabber testssl.sh xca bsd-games cadaver castget dateutils gifsicle hopenpgp-tools mailutils lxsplit mednafen mdp mktorrent mp3splt pamixer pngquant skopeo snarf task vit timew tldr unrtf watchman wavegain yad afl atril cpuburn jpegexiforient libexif python-piexif urlwatch abuse aisleriot blobwars blobwars-data bzflag cuyo tuxcards ksnakeduel ksirk lincity-ng ufw ufw-extras iptstate frozen-bubble pathological gnuchess xboard usleep ktorrent pan photoflare rssguard synbak shotgun spectacle fbgrab arptables ferm ipset bridge-utils openbsd-netcat packeth zaproxy nitrogen acpi_call glu lib32-mesa fbset prettyping lesspipe colorgcc expect ccze xdotool xautomation navit merkaartor stellarium xxkb evtest xcape otf-fantasque-sans-mono croc uncrustify elisa macchanger horst wavemon tzdata ppp ndisc6 syslog-ng gnome-nettool debian-archive-keyring gnome-keyring minizip keyutils gnupg gpa gpg-crypter kgpg ubuntu-keyring gpm badvpn chntpw beep echoping httping ioping quilt scrapy smokeping vym wipe xkbsel julius medusa otter-browser otf-overpass hcxkeys pinentry posterazor ncompress gperftools heaptrack otf-fira-mono otf-fira-sans uchardet oprofile qcachegrind remake rofimoji pacman-contrib pacman-mirrorlist chromium-bsu pydf nss clojure graphviz xmldiff pkgdiff pygmentize python-pygments s-tui sonic-visualiser barcode zint zint-qt gnome-music nyancat supervisor bochs create_ap ipmitool iptraf-ng ipv6calc ipvsadm pigz pstotext psutils teeworlds munin urlscan go go-tools asunder goobox whipper lire nethack glhack osquery xapps imvirt cantor kalgebra libqalculate qalculate-gtk baloo keepassxc kwallet rdesktop gopass firetools firejail pngquant atop xtrabackup findomain sn0int pppusage modemmanager variety dunst consul consul-template mysql-workbench modem-manager-gui ruby-rouge mytop innotop samba spice spice-gtk spice-protocol spice-vdagent avfs jp2a ttf-joypixels profile-sync-daemon anything-sync-daemon usbguard sl gn brightnessctl svgcleaner glances python-numpy python-numpydoc fftw dhex alsa-lib iniparser paprefs ponymix pulsemixer freeimage mpd rshijack words fzf wmctrl edk2-ovmf inotify-tools gpxsee virtualbox-guest-utils virtualbox-guest-iso virtualbox virtualbox-host-dkms molecule awxkit ansible-lint ansible-bender ansible shorewall kustomize tbb broot paperkey luksmeta deheader crun
+sudo pacman -S --needed --noconfirm inetutils sudo base base-devel linux-lts linux-lts-headers netctl coreutils binutils dhcp dhclient dhcping fd mlocate dwdiff wdiff the_silver_searcher ripgrep ack percol tar less most mc findutils diffutils grep sed gawk util-linux procps-ng psmisc cmake make shadow gcc lld lldb openjdk-src openjdk-doc jre-openjdk jdk-openjdk icedtea-web icedtea-web-doc vim-plugins jdk11-openjdk openjdk11-doc openjdk11-src visualvm doxygen doxygen-docs fastjar perl-file-mimeinfo freemind swt mill kitty alacritty rxvt-unicode xterm abduco dvtm screen tmux trash-cli nnn fff ranger vifm nautilus nemo thunar rclone p7zip zip rsync grsync file-roller colordiff diffuse kdiff3 kompare meld gprename krename perl-rename gnome-search-tool kfind mate-utils regexxer exa lsd tree bat termdown bmon figlet slop goaccess moreutils smartmontools cpio libarchive nawk htop recoll git gnome-builder kdevelop lazarus lazarus-qt5 fpc fpc-src netbeans unzip massif-visualizer nemiver scanmem gameconqueror sysprof flex byacc bison peg ragel kde-dev-utils phonon-qt5-gstreamer phonon-qt5 pulseaudio glade fltk ghex okteta jshon jq yq umbrello devhelp kcharselect gucharmap gnome-characters parted gnome-disk-utility gparted partitionmanager btrfs-progs arch-install-scripts dosfstools exfat-utils f2fs-tools xdg-desktop-portal-gtk e2fsprogs jfsutils nilfs-utils ntfs-3g udftools reiserfsprogs xfsprogs ecryptfs-utils unionfs-fuse clonezilla fsarchiver partclone partimage udevil udiskie udisks2 kdf filelight baobab ncdu gdmap testdisk foremost extundelete ext4magic gsmartcontrol libatasmart sweeper rmlint-shredder rmlint fdupes bleachbit gnome-multi-writer gnome-system-monitor xfce4-taskmanager mate-system-monitor lxtask ksysguard gnome-usage psensor xsensors conky conky-manager usbview kinfocenter lshw hardinfo nmon screenfetch neofetch hwinfo hwdetect dmidecode archey3 pacmanlogviewer ksystemlog gnome-system-log gnome-logs xorg-xman khelpcenter yelp gwaterfall gnome-remote-desktop gnome-font-viewer kcron cronie ktimer kshutdown chrony light gnome-color-manager displaycal argyllcms redshift sxhkd xsel cups-pdf cups bluez-cups system-config-printer print-manager xdg-utils blueman blueberry bluedevil gnome-bluetooth bluez-utils acpid acpi powertop bashtop tlp tlp-rdw lostfiles firefox firefox-developer-edition chromium opera upower wire-desktop wireless_tools wireshark-cli wireshark-qt kismet wifite wpa_supplicant cowpatty abook pacmatic pkgfile aria2 uget curl wget reflector pcurses ca-certificates ca-certificates-mozilla tor stow openssl xclip xorg-xclipboard pluma iotop net-tools rofi vim kbd terminus-font adobe-source-code-pro-fonts awesome-terminal-fonts ttf-dejavu ttf-liberation dosbox metasploit telegram-desktop libreoffice-fresh libreoffice-fresh-ru libreoffice-extension-texmaths libreoffice-extension-writer2latex lyx mythes kleopatra ncrack gimp gimp-help-ru potrace pdfmixtool ffmpeg ffmpeg2theora opera-ffmpeg-codecs ffmpegthumbs ffmpegthumbnailer gnome-video-effects pdfmod mupdf mupdf-tools paperwork pdf2djvu pdf2svg pdfcrack pdfsam pdftricks qpdf qpdfview wkhtmltopdf xpdf diffpdf zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps epdfview evince gscan2pdf gv img2pdf mpv cgit git-annex git-crypt gitg git-latexdiff gitolite gitprompt-rs git-repair tig qgit krita pulseeffects chezmoi kate ark adwaita-icon-theme git-annex fakeroot qmmp okular links youtube-dl imagemagick aws-cli pandoc pandoc-citeproc cgrep mkvtoolnix-gui mkvtoolnix-cli rust rust-docs rust-bindgen rust-racer gedit gedit-plugins autossh openssh zsh zsh-doc zsh-lovers libvirt-glib libvirt-python perl-sys-virt dkms polkit virt-manager virt-install qemu qemu-arch-extra qemu-block-gluster qemu-block-iscsi qemu-block-rbd qemu-guest-agent unicorn android-tools android-file-transfer android-udev ttf-droid speedtest-cli cmatrix openshot sox mps-youtube zim optipng hicolor-icon-theme arc-icon-theme audacious audacious-plugins flac i7z gnome-icon-theme gnome-icon-theme-extras gnome-icon-theme-symbolic ttf-fira-sans ttf-fira-mono ttf-ionicons ttf-font-awesome perl-json-xs pass pass-otp rofi-pass pwgen qtpass xournalpp crash pgpdump tcpdump tcptrace xfsdump xorg-xpr scrot networkmanager openvpn pptpclient wireguard-tools shadowsocks shadowsocks-qt5 stunnel elinks lynx w3m falkon qutebrowser min vimb midori axel you-get youtube-viewer mps-youtube nextcloud-client filezilla rtorrent gist pastebinit neomutt mutt fdm procmail offlineimap nftables fractal riot-desktop riot-web wavpack a52dec celt libmad lame obs-studio kdenlive gaupol cmus opus libvorbis opencore-amr speex faac faad2 libfdk-aac jasper openjpeg2 aom dav1d rav1e schroedinger libdv x265 libde265 x264 libmpeg2 libtheora libvpx ogmtools remmina toxcore tuntox toxic qtox eom eog feh geeqie gwenview fbida renameutils nomacs qiv sxiv viewnior vimiv gnome-photos digikam python-cairosvg converseen graphicsmagick gmic guetzli xloadimage jpegoptim optipng fbida fbv darktable flameshot diskus gnome-screenshot maim gpick kcolorchooser gcolor3 gcolor2 sweethome3d fontforge calligra calligra-plan inkscape gnome-calculator speedcrunch dia rawtherapee moc mpg123 xmms2 beets soundconverter audacity gnome-sound-recorder sweep kwave alsa-utils qastools gnac ecasound picard quodlibet easytag mp3unicode mp3info id3v2 gst-plugins-base-libs minitube smtube transmageddon handbrake handbrake-cli ciano transcode mencoder avidemux-cli avidemux-qt subtitleeditor gaupol gnome-subtitles aegisub subdownloader subdl shotcut pitivi blender simplescreenrecorder recordmydesktop peek xdiskusage byzanz zart v4l-utils motion kamoso cheese perl-image-exiftool exiv2 jhead mediainfo mediainfo-gui libsndfile android-file-transfer gnokii gnome-phone-manager kdeconnect gammu wammu pacgraph acetoneiso2 brasero k3b libdvdread libdvdcss libdvdnav gnome-maps gnome-documents gnome-calendar gnome-terminal simple-scan cool-retro-term tilix sparkleshare syncthing syncthing-gtk codeblocks libatasmart glabels scribus abiword vis kakoune kak-lsp xed leafpad beaver nano joe e3 gnumeric libgda kexi txt2tags asciidoc asciidoctor ascii asciinema asciiquarium banner txt2man vbindiff container-diff diff-so-fancy xdelta3 containerd vagrant molecule-vagrant packer libvirt virt-viewer gnome-boxes cpupower minikube kubectl k9s kubectx pinfo texmaker gnome-latex minted gummi qtikz ktikz auto-multiple-choice dblatex dot2tex git-latexdiff hevea kile latex2html latex2rtf otf-latin-modern otf-latinmodern-math python-docutils python-latexcodec rubber sagetex texlive-bin texlive-langchinese texlive-langcyrillic texlive-langextra texlive-langgreek texlive-langjapanese texlive-langkorean texlive-bibtexextra texlive-core texlive-fontsextra texlive-formatsextra texlive-games texlive-humanities texlive-latexextra texlive-music texlive-pictures texlive-pstricks texlive-publishers texlive-science texstudio gnome-chess supertux supertuxkart josm calc khal remind when gnome-clocks armagetronad arc-gtk-theme qmapshack desktop-file-utils gpicview kuickshow gnome-todo noto-fonts-extra hostapd jad jadx groovy ant java11-openjfx java11-openjfx-src java11-openjfx-doc java-avalon-framework java-bcel jruby kotlin gradle jython maven scala xalan-java xerces2-java acme-tiny monit git-lfs git-review lolcat gnome-tweaks datamash clusterssh archlinux-wallpaper wallutils imlib2 strace svt-av1 gc dos2unix pango unrar ack newsboat swig mpop entr gyp sshfs duplicity bash wpscan unoconv ghi libtorrent xz ncurses source-highlight dbeaver dbeaver-plugin-apache-poi dbeaver-plugin-batik dbeaver-plugin-bouncycastle dbeaver-plugin-office dbeaver-plugin-sshj dbeaver-plugin-sshj-lib dbeaver-plugin-svg-format httpie calibre displaycal gnome-control-center vegeta whois lximage-qt parallel shellcheck faba-icon-theme adapta-gtk-theme compsize grub-btrfs snap-pac snapper acl snap-sync syslinux haskell-doctemplates haskell-pandoc-types pandoc-crossref python-pypandoc python-pandocfilters clang llvm openmp compiler-rt badtouch arch-audit hexyl skim sd vivid watchexec smali dgen-sdl gens-gs yabause-qt yelp-tools yasm cuneiform python-pyocr archivetools archlinux-keyring asp which vi autoconf automake groff gzip libtool m4 pacman patch pkgconf systemd texinfo bzip2 cryptsetup popt device-mapper argon2 dhcpcd file filesystem gcc-libs gettext iproute2 iputils licenses linux-firmware logrotate lvm2 man-db man-pages mdadm pciutils perl s-nail sysfsutils systemd-sysvcompat usbutils glibc java-rxtx java-runtime-common retext setconf bbe bluefish canorus dconf-editor ed jedit kid3-qt l3afpad mousepad snd translate-shell hedgewars clipgrab lollypop atomicparsley aspell aspell-ca aspell-cs aspell-de aspell-el aspell-en aspell-es aspell-fr aspell-hu aspell-it aspell-nb aspell-nl aspell-nn aspell-pl aspell-pt aspell-ru aspell-sv aspell-uk linux-tools bpf cgroup_event_listener hyperv libtraceevent perf zzuf radamsa tmon turbostat usbip x86_energy_perf_policy ltris xreader almanah texlive-most texlive-lang drawing ncmpcpp ncmpc linssid tuxcmd diffoscope cantata ario mpc xfmpc htmldoc veracrypt wgetpaste xorg-apps xorg-bdftopcf xorg-iceauth xorg-luit xorg-mkfontscale xorg-sessreg xorg-setxkbmap xorg-smproxy xorg-x11perf xorg-xauth xorg-xbacklight xorg-xcmsdb xorg-xcursorgen xorg-xdpyinfo xorg-xdriinfo xorg-xev xorg-xgamma xorg-xhost xorg-xinput xorg-xkbcomp xorg-xkbevd xorg-xkbutils xorg-xkill xorg-xlsatoms xorg-xlsclients xorg-xmodmap xorg-xpr xorg-xprop xorg-xrandr xorg-xrdb xorg-xrefresh xorg-xset xorg-xsetroot xorg-xvinfo xorg-xwd xorg-xwininfo xorg-xwud xorg-fonts xorg-fonts-encodings xorg-font-util mesa-demos fio hyperfine netperf siege sysbench bonnie++ hdparm iperf iperf3 libdca libmpcdec libwebp qt5-imageformats fdkaac xvidcore xine-lib xine-ui gst-libav intel-ucode iucode-tool pv ddrescue gmock noto-fonts ttf-croscore noto-fonts-cjk earlyoom noto-fonts-emoji ttf-caladea ttf-carlito ttf-opensans ttf-roboto yubioath-desktop kstars moserial rox screengrab utox rawdog zstd gnome-autoar expat zshdb readline paxtest lynis arch-wiki-docs ngrep llpp gst-plugins-bad gst-plugins-good gst-plugins-ugly intel-gmmlib dehydrated hydra exploitdb pixiewps bettercap bettercap-caplets hashcat hashcat-utils cifs-utils iw aircrack-ng fcrackzip john ophcrack pyrit findmyhash cracklib nmap vulscan fping ghostpcl ghostscript ghostxps borgmatic borg hddtemp whowatch mesa intel-media-driver adriconf vulkan-intel vulkan-icd-loader ocl-icd lib32-ocl-icd intel-compute-runtime xf86-input-evdev xf86-input-libinput xf86-input-synaptics xf86-input-void lib32-virtualgl vdpauinfo vim-latexsuite sslstrip sslsplit sslscan sqlmap nikto mitmproxy masscan swaks tcpreplay netbrake hashdeep ifenslave minicom picocom tinyserial lftp evilginx dnscrypt-proxy dns-over-https jnettop arp-scan rink ctags mtr traceroute mkinitcpio linuxconsole bsdiff texworks vapoursynth nemo-seahorse seahorse seahorse-nautilus nvchecker mftrace ttf-cascadia-code ttf-cormorant ttf-fantasque-sans-mono ttf-fira-code ttf-inconsolata ttf-proggy-clean ttf-roboto-mono ttf-ubuntu-font-family progress fvextra iso-codes terraform terraform-provider-keycloak eric syntax-highlighting nano-syntax-highlighting python-qrcode nfs-utils firewalld ebtables dnsmasq tinyemu dosemu multitail bomber asciiportal namcap expac naev astromenace babeltrace dnstracer extremetuxracer grc imwheel xorg-appres xorg-docs xorg-fonts-cyrillic xorg-fonts-misc xorg-fonts-type1 xorg-oclock xorg-server xorg-server-common xorg-server-devel xorg-server-xephyr xorg-server-xnest xorg-server-xvfb xorg-twm xorg-util-macros xorg-xbiff xorg-xcalc xorg-xclock xorg-xconsole xdm-archlinux xorg-xdm autorandr xorg-xedit xorg-xeyes xorg-xfd xorg-xfontsel xorg-xinit xorg-xload xorg-xlogo xorg-xlsfonts xorg-xmag xorg-xmessage xorg-xvidtune i3-gaps py3status i3blocks i3lock-color conky dmenu rofi perl-anyevent-i3 albert rng-tools nyx sigal qbittorrent sssd trojan mailcap zbar detox qrencode qreator sysstat kcptun rsnapshot ext3grep docx2txt lrzip pdftk pdfgrep duperemove snappy lz4 lzip xarchiver lzop atool arj par2cmdline sharutils brotli zlib unarchiver djvulibre tesseract gimagereader-qt gimagereader-common quiterss tesseract-data tesseract-data-tha tesseract-data-tir tesseract-data-tur tesseract-data-uig tesseract-data-ukr tesseract-data-urd tesseract-data-uzb tesseract-data-uzb_cyrl tesseract-data-vie tesseract-data-yid tesseract-data-lat tesseract-data-lav tesseract-data-lit tesseract-data-mal tesseract-data-mar tesseract-data-mkd tesseract-data-mlt tesseract-data-msa tesseract-data-mya tesseract-data-nep tesseract-data-nld tesseract-data-nor tesseract-data-ori tesseract-data-pan tesseract-data-pol tesseract-data-por tesseract-data-pus tesseract-data-ron tesseract-data-rus tesseract-data-san tesseract-data-sin tesseract-data-slk tesseract-data-slk_frak tesseract-data-slv tesseract-data-spa tesseract-data-spa_old tesseract-data-sqi tesseract-data-srp tesseract-data-srp_latn tesseract-data-swa tesseract-data-swe tesseract-data-syr tesseract-data-tam tesseract-data-tel tesseract-data-tgk tesseract-data-tgl tesseract-data-afr tesseract-data-amh tesseract-data-ara tesseract-data-asm tesseract-data-aze tesseract-data-aze_cyrl tesseract-data-bel tesseract-data-ben tesseract-data-bod tesseract-data-bos tesseract-data-bul tesseract-data-cat tesseract-data-ceb tesseract-data-ces tesseract-data-chi_sim tesseract-data-chi_tra tesseract-data-chr tesseract-data-cym tesseract-data-dan tesseract-data-dan_frak tesseract-data-deu tesseract-data-deu_frak tesseract-data-dzo tesseract-data-ell tesseract-data-eng tesseract-data-enm tesseract-data-epo tesseract-data-equ tesseract-data-est tesseract-data-eus tesseract-data-fas tesseract-data-fin tesseract-data-fra tesseract-data-frk tesseract-data-frm tesseract-data-gle tesseract-data-glg tesseract-data-grc tesseract-data-guj tesseract-data-hat tesseract-data-heb tesseract-data-hin tesseract-data-hrv tesseract-data-hun tesseract-data-iku tesseract-data-ind tesseract-data-isl tesseract-data-ita tesseract-data-ita_old tesseract-data-jav tesseract-data-jpn tesseract-data-kan tesseract-data-kat tesseract-data-kat_old tesseract-data-kaz tesseract-data-khm tesseract-data-kir tesseract-data-kor tesseract-data-kur tesseract-data-lao cppcheck check rstcheck rkhunter enchant ipguard libpcap arpwatch bully darkstat dsniff etherape ettercap pth net-snmp iftop hcxtools hping lorcon p0f zmap libsrtp languagetool reprotest disorderfs yapf splint afew alot notmuch notmuch-mutt notmuch-runtime notmuch-vim sylpheed m2r pelican python-pybtex-docutils python-recommonmark python-cloudflare certbot-dns-google certbot-dns-digitalocean certbot-dns-ovh certbot-nginx certbot acme.sh certbot-dns-cloudflare hcloud minio s3cmd s3fs-fuse abcde arduino arduino-avr-core arduino-builder arduino-cli arduino-ctags arduino-docs reaver slowhttptest thc-ipv6 mcabber testssl.sh xca bsd-games cadaver castget dateutils gifsicle hopenpgp-tools mailutils lxsplit mednafen mdp mktorrent mp3splt pamixer pngquant skopeo snarf task vit timew tldr unrtf watchman wavegain yad afl atril cpuburn jpegexiforient libexif python-piexif urlwatch abuse aisleriot blobwars blobwars-data bzflag cuyo tuxcards ksnakeduel ksirk lincity-ng ufw ufw-extras iptstate frozen-bubble pathological gnuchess xboard usleep ktorrent pan photoflare rssguard synbak shotgun spectacle fbgrab arptables ferm ipset bridge-utils openbsd-netcat packeth zaproxy nitrogen acpi_call glu lib32-mesa fbset prettyping lesspipe colorgcc expect ccze xdotool xautomation navit merkaartor stellarium xxkb evtest xcape otf-fantasque-sans-mono croc uncrustify elisa macchanger horst wavemon tzdata ppp ndisc6 syslog-ng gnome-nettool debian-archive-keyring gnome-keyring minizip keyutils gnupg gpa gpg-crypter kgpg ubuntu-keyring gpm badvpn chntpw beep echoping httping ioping quilt scrapy smokeping vym wipe xkbsel julius medusa otter-browser otf-overpass hcxkeys pinentry posterazor ncompress gperftools heaptrack otf-fira-mono otf-fira-sans uchardet oprofile qcachegrind remake rofimoji pacman-contrib pacman-mirrorlist chromium-bsu pydf nss clojure graphviz xmldiff pkgdiff pygmentize python-pygments s-tui sonic-visualiser barcode zint zint-qt gnome-music nyancat supervisor bochs create_ap ipmitool iptraf-ng ipv6calc ipvsadm pigz pstotext psutils teeworlds munin urlscan go go-tools asunder goobox whipper lire nethack glhack osquery xapps imvirt cantor kalgebra libqalculate qalculate-gtk baloo keepassxc kwallet rdesktop gopass firetools firejail pngquant atop xtrabackup findomain sn0int pppusage modemmanager variety dunst consul consul-template mysql-workbench modem-manager-gui ruby-rouge mytop innotop samba spice spice-gtk spice-protocol spice-vdagent avfs jp2a ttf-joypixels profile-sync-daemon anything-sync-daemon usbguard sl gn brightnessctl svgcleaner glances python-numpy python-numpydoc fftw dhex alsa-lib iniparser paprefs ponymix pulsemixer freeimage mpd rshijack words fzf wmctrl edk2-ovmf inotify-tools gpxsee virtualbox-guest-utils virtualbox-guest-iso virtualbox virtualbox-host-dkms molecule awxkit ansible-lint ansible-bender ansible shorewall kustomize tbb broot paperkey luksmeta deheader crun xf86-video-intel xf86-video-vesa foliate intel-undervolt gcc-objc gcc-fortran gcc-d gcc-ada gcc8-libs gcc8-fortran gcc8 aarch64-linux-gnu-gcc podman runc buildah containerd toolbox ddcutil woeusb
 ```
 
 ### Проверка обновления [микрокода Intel](https://wiki.archlinux.org/index.php/Microcode)
@@ -912,40 +923,93 @@ sudo shutdown -r 0
 startx
 ```
 
-### Настраиваем [графические драйверы](https://youtu.be/zEhAJMQYSws)
+### Настраиваем [графический драйвер Intel](https://youtu.be/zEhAJMQYSws)
 
 ```bash
-sudo vim /etc/X11/xorg.conf.d/20-modesetting.conf
+sudo vim /etc/X11/xorg.conf.d/20-intel.conf
 ```
 
 ```bash
 Section "Device"
-  Identifier "Intel Graphics"
-  Driver "modesetting"
-  Option "AccelMethod" "glamor"
-  Option "DRI"  "3"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option      "TearFree" "true"
+   Option      "AccelMethod" "sna"
 EndSection
 ```
 
+### Или что бы не вписывать можно скачать файл [/etc/X11/xorg.conf.d/20-intel.conf](https://raw.githubusercontent.com/akimdi/help-install-arch/master/20-intel.conf)
+
 ```bash
-sudo vim /etc/X11/xorg.conf.d/modesetting.conf
+sudo wget --https-only --output-document=/etc/X11/xorg.conf.d/20-intel.conf https://raw.githubusercontent.com/akimdi/help-install-arch/master/20-intel.conf
+```
+
+### Проверить графику можно по тестам на тиринг и следующей командой
+
+```bash
+sudo glxgears -info
+```
+
+[Web browser "VSYNC synchronization" tester](https://www.vsynctester.com)
+
+[The effect of web browser "Input Lag" in HTML5 games](https://www.vsynctester.com/game.html)
+
+[HTML/JavaScript mouse input performance tests](https://www.vsynctester.com/testing/mouse.html)
+
+[displayhz](https://www.displayhz.com)
+
+[Web browser "GPU memory usage" tester](https://www.vsynctester.com/gputest.html)
+
+[Discover your display's VSYNC refresh rate](https://www.vsynctester.com/detect.html)
+
+[Video tearing and smoothness test @60fps](https://youtu.be/cuXsupMuik4)
+
+[Tearing test @60fps](https://youtu.be/0RvIbVmCOxg)
+
+[tearing test @29.97 fps 1080p](https://youtu.be/5xkNy9gfKOg)
+
+[РЕШЕНИЕ ПРОБЛЕМЫ ТИРИНГА В LINUX](https://youtu.be/4PLgKGPNusY)
+
+[Peru 8K HDR 60FPS](https://youtu.be/1La4QzGeaaQ)
+
+[vsync tearing test](https://youtu.be/9hIRq5HTh5s)
+
+[Screen Tearing Test](https://youtu.be/MfL_JkcEFbE)
+
+[Full HD LCD panel test, light bleeding test, motion test, tv tests](https://youtu.be/tPdLZ9g0l28)
+
+[Dimming Test](https://youtu.be/3So8OFdqcdA)
+
+[webgl aquarium](https://webglsamples.org/aquarium/aquarium.html)
+
+[fishtank](https://webglsamples.org/fishtank/fishtank.html)
+
+[blob](https://webglsamples.org/blob/blob.html)
+
+[field](https://webglsamples.org/field/field.html)
+
+[electricflower](https://webglsamples.org/electricflower/electricflower.html)
+
+[dynamic cubemap](https://webglsamples.org/dynamic-cubemap/dynamic-cubemap.html)
+
+[multiple views](https://webglsamples.org/multiple-views/multiple-views.html)
+
+[spacerocks](https://webglsamples.org/spacerocks/spacerocks.html)
+
+[electroShock](https://webglsamples.org/electroShock/application.html)
+
+### Устанавливаем окружение по-умолчанию с OpenJDK8
+
+```bash
+sudo /usr/bin/archlinux-java get
 ```
 
 ```bash
-Section "Device"
-  Identifier "modesetting"
-  Driver "modesetting"
-EndSection
-```
-
-### Или что бы не вписывать можно скачать файлы [/etc/X11/xorg.conf.d/20-modesetting.conf](https://raw.githubusercontent.com/akimdi/help-install-arch/master/20-modesetting.conf) и [/etc/X11/xorg.conf.d/modesetting.conf](https://raw.githubusercontent.com/akimdi/help-install-arch/master/modesetting.conf)
-
-```bash
-sudo wget --https-only --output-document=/etc/X11/xorg.conf.d/20-modesetting.conf https://raw.githubusercontent.com/akimdi/help-install-arch/master/20-modesetting.conf
+sudo /usr/bin/archlinux-java set java-8-openjdk
 ```
 
 ```bash
-sudo wget --https-only --output-document=/etc/X11/xorg.conf.d/modesetting.conf https://raw.githubusercontent.com/akimdi/help-install-arch/master/modesetting.conf
+sudo /usr/bin/archlinux-java status
 ```
 
 ### Настраиваем [русскую клавиатуру в Xorg](https://wiki.archlinux.org/index.php/Xorg/Keyboard_configuration) и вписываем в файл [/etc/X11/xorg.conf.d/00-keyboard.conf](https://raw.githubusercontent.com/akimdi/help-install-arch/master/00-keyboard.conf) следующие данные
@@ -1095,57 +1159,33 @@ chezmoi -v apply
 chezmoi -v update
 ```
 
-### Создаём папки для монтированных дисков и даём права
-
-```bash
-sudo mkdir -p /home/me/1tbVM /home/me/2tbnew /home/me/2tbold /home/me/4tb /home/me/6tb /home/me/10tb
-```
-
-```bash
-sudo chown -R me:users /home/me/1tbVM
-```
-
-```bash
-sudo chown -R me:users /home/me/2tbnew
-```
-
-```bash
-sudo chown -R me:users /home/me/2tbold
-```
-
-```bash
-sudo chown -R me:users /home/me/4tb
-```
-
-```bash
-sudo chown -R me:users /home/me/6tb
-```
-
-```bash
-sudo chown -R me:users /home/me/10tb
-```
-
-### Для автоматического монтирования дисков узнаем [UUID каждого из них](https://wiki.archlinux.org/index.php/Fstab)
-
-```bash
-lsblk -f
-```
-
-### Прописываем в файл `/etc/fstab` UUID которые узнали с помощью команды выше
-
-```bash
-sudo vim /etc/fstab
-```
-
 ### Следует обязательно запустить [SpaceVim](https://github.com/SpaceVim/SpaceVim) после выполнения `fullupgrade` чтобы установились [необходимые](https://spacevim.org/use-vim-as-a-php-ide) [плагины](https://github.com/Gabirel/Hack-SpaceVim)
 
-*SpaceVim уже интегрирован в систему обновления `fullupgrade`*
+```bash
+curl -sLf https://spacevim.org/install.sh | bash
+```
 
 *Файл настроек SpaceVim лежит в **/home/me/.SpaceVim.d/init.toml***
 
 ```bash
 vim
 ```
+
+[Статьи по прокачке IDE SpaceVim](https://github.com/SpaceVim/SpaceVim/issues/3464)
+
+[SpaceVim: A Vimmer’s Eval](https://medium.com/@JethroCao/spacevim-a-vimmers-eval-d2020118b517)
+
+[Use faster file tree on SpaceVim](https://hashnode.com/post/use-faster-file-tree-on-spacevim-ck6djritm00jy3cs1l5zwk38s)
+
+[SpaceVim: Layers Under-the-Hood](https://medium.com/swlh/spacevim-layers-under-the-hood-3dba2a02d13a)
+
+[Installing and exploring SpaceVim](https://blog.wilcoxd.com/2017/01/09/installing-and-exploring-spacevim)
+
+[My conclusion of using SpaceVim for 5 days](https://medium.com/@simonkistler/my-conclusion-of-using-spacevim-for-5-days-53c470c55748)
+
+[Editor Almighty](https://medium.com/gdg-vit/editor-almighty-79807100f10c)
+
+[What can you get from Hack-SpaceVim](https://github.com/Gabirel/Hack-SpaceVim)
 
 ### Устанавливаем [git-extras](https://github.com/tj/git-extras/blob/master/Installation.md#building-from-source) чтобы получить дополнительные [команды Git](https://github.com/tj/git-extras/blob/master/Commands.md)
 
@@ -1409,6 +1449,8 @@ network.trr.uri = https://cloudflare-dns.com/dns-query
 [Privacy Possum](https://addons.mozilla.org/firefox/addon/privacy-possum)
 
 [Don't touch my tabs](https://addons.mozilla.org/firefox/addon/dont-touch-my-tabs)
+
+[cookies txt](https://addons.mozilla.org/firefox/addon/cookies-txt)
 
 ***Полезные дополнения (необязательные)***
 
