@@ -1509,7 +1509,7 @@ sudo systemctl enable tor.service
 sudo systemctl status tor.service
 ```
 
-*** Например можно скачать видео которое недоступно в России или ограничено по IP ***
+*Например можно скачать видео которое недоступно в России или ограничено по IP*
 
 ```bash
 torify youtube-dl --verbose https://www.***************.com/view_video.php?viewkey=********
