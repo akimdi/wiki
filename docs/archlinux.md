@@ -2,18 +2,10 @@
 
 ### Скачиваем образ и хэш-сумму
 
-***Для этого потребуются программы `exa` `wget` `aria2` `curl` `date` `sha1sum` `md5sum`***
+***Для этого потребуются программы `wget` `curl` `date` `sha1sum` `md5sum`***
 
 ```bash
-curl -L -o archlinux-$(date +"%Y").$(date +"%m").01-x86_64.iso.torrent https://www.archlinux.org/releng/releases/$(date +"%Y").$(date +"%m").01/torrent
-```
-
-```bash
-wget --no-cache --no-cookies --https-only https://www.archlinux.org/iso/$(date +"%Y").$(date +"%m").01/archlinux-$(date +"%Y").$(date +"%m").01-x86_64.iso.sig https://mirrors.edge.kernel.org/archlinux/iso/$(date +"%Y").$(date +"%m").01/md5sums.txt https://mirrors.edge.kernel.org/archlinux/iso/$(date +"%Y").$(date +"%m").01/sha1sums.txt
-```
-
-```bash
-aria2c --follow-metalink=mem --enable-color=true --force-sequential=true --show-console-readout=true --enable-dht=true --continue=true --seed-time=0 --auto-file-renaming=true --download-result=full --file-allocation=none --human-readable=true archlinux-$(date +"%Y").$(date +"%m").01-x86_64.iso.torrent
+wget --no-cache --no-cookies --https-only --show-progress --verbose https://www.archlinux.org/iso/$(date +"%Y").$(date +"%m").01/archlinux-$(date +"%Y").$(date +"%m").01-x86_64.iso.sig https://mirrors.edge.kernel.org/archlinux/iso/$(date +"%Y").$(date +"%m").01/md5sums.txt https://mirrors.edge.kernel.org/archlinux/iso/$(date +"%Y").$(date +"%m").01/sha1sums.txt https://mirrors.edge.kernel.org/archlinux/iso/$(date +"%Y").$(date +"%m").01/archlinux-$(date +"%Y").$(date +"%m").01-x86_64.iso
 ```
 
 ### Проверка подписи
@@ -31,14 +23,10 @@ gpg: Действительная подпись пользователя "Pierr
 ### Проверяем хэш-суммы
 
 ```bash
-md5sum --ignore-missing -c md5sums.txt
+md5sum --ignore-missing -c md5sums.txt && sha1sum --ignore-missing -c sha1sums.txt
 ```
 
-```bash
-sha1sum --ignore-missing -c sha1sums.txt
-```
-
-***Записываем на флэшку с помощью [Rufus](https://github.com/pbatard/rufus/releases/latest) или [Etcher](https://github.com/balena-io/etcher/releases/latest)***
+***Записываем образ на флэшку с помощью [Rufus](https://github.com/pbatard/rufus/releases/latest) или [Etcher](https://github.com/balena-io/etcher/releases/latest)***
 
 ### Вставляем флэшку, определяем её и форматируем
 
