@@ -1647,57 +1647,57 @@ gfx.webrender.enabled = true
 
 [CanvasBlocker](https://addons.mozilla.org/firefox/addon/canvasblocker)
 
-[CanvasBlocker settings](https://raw.githubusercontent.com/akimdi/help-install-arch/master/CanvasBlocker-settings_2019-12-25_02-02-26.json)
+[CanvasBlocker settings](https://raw.githubusercontent.com/akimdi/help-install-arch/main/CanvasBlocker-settings_2021-02-26_01-12-22.json)
 
-[Incognito This Tab (Shortcut: Alt + i)](https://addons.mozilla.org/firefox/addon/incognito-this-tab)
+[Clear Browsing Data](https://addons.mozilla.org/firefox/addon/clear-browsing-data)
 
-[Close All Tabs (Shortcut: Alt + w)](https://addons.mozilla.org/firefox/addon/close-all-tabs-webextension)
+[ClearURLs](https://addons.mozilla.org/firefox/addon/clearurls)
+
+[Close All Tabs](https://addons.mozilla.org/firefox/addon/close-all-tabs-webextension)
+
+[cookies](https://addons.mozilla.org/firefox/addon/cookies-txt)
+
+[Copy PlainText](https://addons.mozilla.org/firefox/addon/copy-plaintext)
 
 [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes)
 
-[Firefox Multi-Account Containers](https://addons.mozilla.org/ru/firefox/addon/multi-account-containers)
+[Firefox Multi-Account Containers](https://addons.mozilla.org/firefox/addon/multi-account-containers)
+
+[FoxyProxy Standard](https://addons.mozilla.org/firefox/addon/foxyproxy-standard)
+
+[FoxyProxy Standard setting](https://raw.githubusercontent.com/akimdi/help-install-arch/main/FoxyProxy%20Standard_2021-02-25.json)
+
+[LanguageTool](https://addons.mozilla.org/firefox/addon/languagetool)
+
+[Grammarly](https://addons.mozilla.org/firefox/addon/grammarly-1)
 
 [HTTPS Everywhere](https://addons.mozilla.org/firefox/addon/https-everywhere)
 
+[Incognito This Tab](https://addons.mozilla.org/firefox/addon/incognito-this-tab)
+
 [KeePassXC-Browser](https://addons.mozilla.org/firefox/addon/keepassxc-browser)
 
-[NoScript](https://addons.mozilla.org/firefox/addon/noscript)
+[Merge Windows](https://addons.mozilla.org/firefox/addon/merge-window)
 
-[SponsorBlock](https://addons.mozilla.org/firefox/addon/sponsorblock)
+[NoScript Security Suite](https://addons.mozilla.org/firefox/addon/noscript)
+
+[Ping Blocker](https://addons.mozilla.org/firefox/addon/ping-blocker)
+
+[Privacy Badger](https://addons.mozilla.org/firefox/addon/privacy-badger17)
+
+[Privacy Possum](https://addons.mozilla.org/firefox/addon/privacy-possum)
+
+[Search by Image](https://addons.mozilla.org/firefox/addon/search_by_image)
+
+[Search on Google US](https://addons.mozilla.org/firefox/addon/search-google-us)
 
 [Temporary Containers](https://addons.mozilla.org/firefox/addon/temporary-containers)
+
+[Temporary Containers setting](https://raw.githubusercontent.com/akimdi/help-install-arch/main/temporary_containers_preferences_2021-02-26_01.43.25.json)
 
 [uMatrix](https://addons.mozilla.org/firefox/addon/umatrix)
 
 [uMatrix setting](https://raw.githubusercontent.com/akimdi/help-install-arch/master/my-umatrix-backup.txt)
-
-[YouTube High Definition](https://addons.mozilla.org/firefox/addon/youtube-high-definition)
-
-[LanguageTool](https://addons.mozilla.org/firefox/addon/languagetool)
-
-[Container proxy](https://addons.mozilla.org/firefox/addon/container-proxy)
-
-[Copy PlainText](https://addons.mozilla.org/firefox/addon/copy-plaintext)
-
-[Privacy Badger](https://addons.mozilla.org/firefox/addon/privacy-badger17)
-
-[Merge Windows](https://addons.mozilla.org/firefox/addon/merge-window)
-
-[Privacy Possum](https://addons.mozilla.org/firefox/addon/privacy-possum)
-
-[Don't touch my tabs](https://addons.mozilla.org/firefox/addon/dont-touch-my-tabs)
-
-[cookies txt](https://addons.mozilla.org/firefox/addon/cookies-txt)
-
-[ping-blocker](https://addons.mozilla.org/firefox/addon/ping-blocker)
-
-[search-google-us](https://addons.mozilla.org/firefox/addon/search-google-us)
-
-[search_by_image](https://addons.mozilla.org/firefox/addon/search_by_image)
-
-[clear-browsing-data](https://addons.mozilla.org/firefox/addon/clear-browsing-data)
-
-[clearurls](https://addons.mozilla.org/firefox/addon/clearurls)
 
 ***Полезные дополнения (необязательные)***
 
