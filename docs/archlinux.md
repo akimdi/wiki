@@ -1099,14 +1099,14 @@ sudo -i
 sudo chsh -s /bin/zsh
 ```
 
+```bash
+exit
+```
+
 ### Установка ZSH пользователю me
 
 ```bash
-sudo usermod me -s /usr/bin/zsh
-```
-
-```bash
-exit
+chsh -s /bin/zsh
 ```
 
 ### Настройка Git и GitHub
@@ -1248,13 +1248,16 @@ sudo vim /etc/fstab
 # https://wiki.archlinux.org/index.php/Fstab
 #
 # <file system> <dir> <type> <options> <dump> <pass>
+
 # /dev/sda3
-UUID=f87d9c94-c934-4cd8-9b2b-1bc2afe241b1	/         	ext4      	rw,relatime	0 1
+UUID=2e5e677d-4a5e-4dc6-83bf-dde53741c51e	/         	ext4      	rw,relatime	0 1
 
 # /dev/sda1
-UUID=9541-8EE4      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro	0 2
+UUID=76D5-B099      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 
-# RAM folder /home/me/ram
+# /dev/sda2
+UUID=841be320-b878-4e09-969c-3ab15a2dba21	none      	swap      	defaults  	0 0
+
 tmpfs /home/me/ram tmpfs nodev,nosuid,size=32G 0 0
 
 # /dev/sdb1
@@ -1651,6 +1654,12 @@ gfx.webrender.enabled = true
 
 [Clear Browsing Data](https://addons.mozilla.org/firefox/addon/clear-browsing-data)
 
+[YouTube NonStop](https://addons.mozilla.org/firefox/addon/youtube-nonstop)
+
+[YouTube High Definition](https://addons.mozilla.org/firefox/addon/youtube-high-definition)
+
+[SponsorBlock](https://addons.mozilla.org/firefox/addon/sponsorblock)
+
 [ClearURLs](https://addons.mozilla.org/firefox/addon/clearurls)
 
 [Close All Tabs](https://addons.mozilla.org/firefox/addon/close-all-tabs-webextension)
@@ -1698,6 +1707,10 @@ gfx.webrender.enabled = true
 [uMatrix](https://addons.mozilla.org/firefox/addon/umatrix)
 
 [uMatrix setting](https://raw.githubusercontent.com/akimdi/help-install-arch/master/my-umatrix-backup.txt)
+
+[mailvelope](https://addons.mozilla.org/firefox/addon/mailvelope)
+
+[tridactyl-vim](https://addons.mozilla.org/firefox/addon/tridactyl-vim)
 
 ***Полезные дополнения (необязательные)***
 
