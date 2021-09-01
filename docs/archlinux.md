@@ -1185,22 +1185,34 @@ chezmoi -v apply
 chezmoi -v update
 ```
 
-*Добавляем несколько зеркал для этого репозитория на gitlab, bitbucket и sourcehut*
+*Добавляем несколько зеркал для этого репозитория на gitlab, gitea, bitbucket, sourcehut, notabug и codeberg*
 
 ```bash
 cd /home/me/.local/share/chezmoi
 ```
 
 ```bash
-git remote add origingitlab git@gitlab.com:akimdi/archlinux-dotfiles.git
+git remote add origingitlab git@gitlab-akimdi:akimdi/archlinux-dotfiles.git
 ```
 
 ```bash
-git remote add originsourcehut git@git.sr.ht:~akimdi/archlinux-dotfiles
+git remote add origingitea git@gitea-akimdi:akimdi/archlinux-dotfiles.git
 ```
 
 ```bash
-git remote add originbitbucket git@bitbucket.org:akimdi/archlinux-dotfiles.git
+git remote add originsourcehut git@sourcehut-akimdi:~akimdi/archlinux-dotfiles
+```
+
+```bash
+git remote add originbitbucket git@bitbucket-akimdi:akimdi/archlinux-dotfiles.git
+```
+
+```bash
+git remote add originbitbucket git@notabug-akimdi:akimdi/archlinux-dotfiles.git
+```
+
+```bash
+git remote add origincodeberg git@codeberg-akimdi:akimdi/archlinux-dotfiles.git
 ```
 
 ```bash
@@ -1563,11 +1575,11 @@ sudo systemctl status tor.service
 *Например можно скачать видео которое недоступно в России или ограничено по IP*
 
 ```bash
-torify youtube-dl --verbose https://www.***************.com/view_video.php?viewkey=********
+torify yt-dlp --verbose https://www.***.com/view_video.php?viewkey=ph5f7e370545022
 ```
 
 ```bash
-proxychains youtube-dl --verbose https://www.***************.com/view_video.php?viewkey=********
+proxychains yt-dlp --verbose https://www.***.com/view_video.php?viewkey=ph5f7e370545022
 ```
 
 ### Настраиваем [экосистему](https://www.digitalocean.com/community/tutorials/docker-ru) [Docker](https://wiki.archlinux.org/index.php/Docker)
@@ -1702,7 +1714,11 @@ gfx.webrender.enabled = true
 
 [Theme GruvBox Dark](https://addons.mozilla.org/firefox/addon/gruvbox-dark)
 
+[user-agent-string-switcher](https://addons.mozilla.org/firefox/addon/user-agent-string-switcher)
+
 [Adguard](https://addons.mozilla.org/firefox/addon/adguard-adblocker)
+
+[Translate Web Pages](https://addons.mozilla.org/firefox/addon/traduzir-paginas-web)
 
 [CanvasBlocker](https://addons.mozilla.org/firefox/addon/canvasblocker)
 
@@ -1712,11 +1728,13 @@ gfx.webrender.enabled = true
 
 [YouTube NonStop](https://addons.mozilla.org/firefox/addon/youtube-nonstop)
 
-[YouTube High Definition](https://addons.mozilla.org/firefox/addon/youtube-high-definition)
+[Enhancer for YouTube](https://addons.mozilla.org/firefox/addon/enhancer-for-youtube)
 
 [SponsorBlock](https://addons.mozilla.org/firefox/addon/sponsorblock)
 
 [ClearURLs](https://addons.mozilla.org/firefox/addon/clearurls)
+
+[foxytab](https://addons.mozilla.org/firefox/addon/foxytab)
 
 [Close All Tabs](https://addons.mozilla.org/firefox/addon/close-all-tabs-webextension)
 
@@ -1755,6 +1773,10 @@ gfx.webrender.enabled = true
 [Search by Image](https://addons.mozilla.org/firefox/addon/search_by_image)
 
 [Search on Google US](https://addons.mozilla.org/firefox/addon/search-google-us)
+
+[i-dont-care-about-cookies](https://addons.mozilla.org/firefox/addon/i-dont-care-about-cookies)
+
+[view-page-archive](https://addons.mozilla.org/firefox/addon/view-page-archive)
 
 [Temporary Containers](https://addons.mozilla.org/firefox/addon/temporary-containers)
 
