@@ -1606,11 +1606,11 @@ sudo systemctl status tor.service
 *Например можно скачать видео которое недоступно в России или ограничено по IP*
 
 ```bash
-torify yt-dlp --verbose https://www.***.com/view_video.php?viewkey=ph5f7e370545022
+torify torify curl https://checkip.amazonaws.com && curl --socks5 localhost:9050 --socks5-hostname localhost:9050 -s https://check.torproject.org/ | cat | grep -m 1 Congratulations | xargs
 ```
 
 ```bash
-proxychains yt-dlp --verbose https://www.***.com/view_video.php?viewkey=ph5f7e370545022
+yt-dlp --verbose --proxy socks5://127.0.0.1:9050 https://youtu.be/BaW_jenozKc
 ```
 
 ### Настраиваем [экосистему](https://www.digitalocean.com/community/tutorials/docker-ru) [Docker](https://wiki.archlinux.org/index.php/Docker)
